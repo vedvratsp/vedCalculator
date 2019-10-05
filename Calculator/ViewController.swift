@@ -9,7 +9,7 @@
 
 import UIKit
 import AVFoundation
-
+//Initialization of the variables 
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayNum: UILabel!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+//Taking numeric button pressed, and logic for "." store as in string and diplayin it on the Screen
     @IBAction func numButtonsPressed(_ sender: UIButton) {
                 //print(sender.tag)
         if (displayNum.text! == "0" || displayNum.text! == "+" || displayNum.text! == "-" || displayNum.text! == "*" || displayNum.text! == "/" || modOccured ) && !(sender.tag == 0) && !(sender.tag==100){
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //Logic for +,-,*,÷ using if-else
     @IBAction func performOperation(_ sender: UIButton) {
         
         if previousNum==0 {
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //Logic for clearing the Screen, setting everything to zero
     @IBAction func clearScreen(_ sender: UIButton) {
         
         displayNum.text = "0"
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         decimal = false
     }
     
-    
+    //Make number from positive to negative or vice-versa
     @IBAction func invertnum(_ sender: UIButton) {
         
         currentNumber = Double(displayNum.text!) ?? 0
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         previousNum = currentNumber
     }
     
-    
+    //fucntion for clear number bit by bit from last index
     @IBAction func erase(_ sender: UIButton) {
         
         if displayNum.text!.count > 1{
